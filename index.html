@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kuyili – Send Your Voice as a Phone Call</title>
+
+  <style>
+    :root {
+      --primary: #ffcc00;
+      --dark: #111;
+      --gray: #666;
+      --light: #fafafa;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--dark);
+    }
+
+    header {
+      background: var(--primary);
+      padding: 20px 16px;
+      text-align: center;
+      position: relative;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      background: #000;
+      color: #fff;
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    section {
+      padding: 32px 16px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray);
+    }
+
+    .banner {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 24px;
+      font-weight: 500;
+    }
+
+    .steps {
+      display: grid;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .step {
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .usecases {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .store-btn {
+      padding: 14px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      background: #000;
+      color: #fff;
+    }
+
+    .demo {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    audio {
+      margin-top: 12px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .policy {
+      margin-top: 40px;
+      background: #fff8e1;
+      border-radius: 16px;
+      padding: 24px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1 id="title">Kuyili</h1>
+  <p id="subtitle">Send your voice as a phone call 📞</p>
+  <div class="lang-toggle" onclick="toggleLang()">தமிழ்</div>
+</header>
+
+<section class="hero">
+  <h2 id="heroTitle">Your voice. Delivered as a real phone call.</h2>
+  <p id="heroDesc">
+    From anywhere in the world, send your real voice as a direct phone call
+    to any Indian mobile number.
+  </p>
+
+  <div class="banner" id="banner">
+    🇶🇦 Qatar → 🇮🇳 India  
+    <br/>Your voice reaches home as a phone call
+  </div>
+</section>
+
+<section>
+  <div class="steps">
+    <div class="step">
+      <h3 id="step1">🎙️ Record</h3>
+      <p id="step1d">Record a short voice message in the Kuyili app.</p>
+    </div>
+
+    <div class="step">
+      <h3 id="step2">📱 Enter Indian Number</h3>
+      <p id="step2d">Type the Indian mobile number you want to reach.</p>
+    </div>
+
+    <div class="step">
+      <h3 id="step3">📞 Delivered as a Call</h3>
+      <p id="step3d">Kuyili calls the number and plays your voice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="usecases">
+  <h3 id="useTitle">Why people use Kuyili ❤️</h3>
+  <ul id="useList">
+    <li>Parents don’t check WhatsApp but answer calls</li>
+    <li>Wedding & family announcements</li>
+    <li>Important reminders</li>
+    <li>Indians living abroad reaching family</li>
+  </ul>
+</section>
+
+<section class="demo">
+  <h3 id="demoTitle">Hear a demo voice call</h3>
+  <audio controls>
+    <!-- Replace with your real demo -->
+    <source src="demo-voice.mp3" type="audio/mpeg">
+  </audio>
+</section>
+
+<section class="buttons">
+  <!-- Replace # with real links -->
+  <a href="#" class="store-btn">📱 Play Store</a>
+  <a href="#" class="store-btn">🍎 App Store</a>
+</section>
+
+<section class="policy">
+  <h3 id="policyTitle">Anti-Spam & Trust Policy</h3>
+  <ul id="policyList">
+    <li>Only user-recorded human voices are allowed</li>
+    <li>No AI voice generation or impersonation</li>
+    <li>No bulk or automated spam calls</li>
+    <li>Marketing & political usage requires approval</li>
+    <li>Violation leads to permanent ban</li>
+  </ul>
+</section>
+
+<footer>
+  © 2025 Kuyili Data Center · Built for families, not spam
+</footer>
+
+<script>
+  let tamil = false;
+
+  function toggleLang() {
+    tamil = !tamil;
+
+    document.querySelector(".lang-toggle").innerText = tamil ? "English" : "தமிழ்";
+
+    document.getElementById("subtitle").innerText =
+      tamil ? "உங்கள் குரலை நேரடி போன் கால் ஆக அனுப்புங்கள் 📞" : "Send your voice as a phone call 📞";
+
+    document.getElementById("heroTitle").innerText =
+      tamil ? "உங்கள் குரல். நேரடி போன் கால் ஆக." : "Your voice. Delivered as a real phone call.";
+
+    document.getElementById("heroDesc").innerText =
+      tamil
+        ? "உலகின் எந்த இடத்திலிருந்தும், இந்திய மொபைல் எண்ணிற்கு உங்கள் குரலை நேரடி போன் கால் ஆக அனுப்புங்கள்."
+        : "From anywhere in the world, send your real voice as a direct phone call to any Indian mobile number.";
+
+    document.getElementById("useTitle").innerText =
+      tamil ? "ஏன் Kuyili பயன்படுகிறது ❤️" : "Why people use Kuyili ❤️";
+  }
+</script>
+
+</body>
+</html>
